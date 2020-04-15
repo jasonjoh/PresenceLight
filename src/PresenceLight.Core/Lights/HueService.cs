@@ -61,11 +61,11 @@ namespace PresenceLight.Core
                 case "DoNotDisturb":
                     command.SetColor(new RGBColor("#800000"));
                     break;
-                case "OutOfOffice":
-                    command.SetColor(new RGBColor("#800080"));
+                case "Off":
+                    command.SetColor(new RGBColor("#FFFFFF"));
                     break;
                 default:
-                    command.SetColor(new RGBColor("#FFFFFF"));
+                    command.SetColor(new RGBColor(availability));
                     break;
             }
 
@@ -109,7 +109,6 @@ namespace PresenceLight.Core
             }
             return String.Empty;
         }
-
         public async Task<IEnumerable<Light>> CheckLights()
         {
             if (_client == null)
